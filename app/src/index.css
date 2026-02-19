@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 207 55% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 205 60% 95%;
+    --secondary-foreground: 207 55% 23%;
+    --muted: 205 40% 96%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 45 70% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 205 30% 85%;
+    --input: 205 30% 90%;
+    --ring: 207 55% 23%;
+    --radius: 0.75rem;
+    
+    /* Custom ANSES Colors */
+    --anses-primary: #1a3a5c;
+    --anses-secondary: #2d5a87;
+    --anses-light: #e8f4fc;
+    --anses-accent: #c9a227;
+    --anses-text: #1a1a1a;
+    --anses-text-gray: #4a4a4a;
+    --anses-success: #28a745;
+    --anses-warning: #f0ad4e;
+    
+    /* Animation Easings */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--anses-primary);
+  }
+  
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.375rem; }
+  
+  p {
+    color: var(--anses-text-gray);
+    line-height: 1.7;
+  }
+  
+  a {
+    color: var(--anses-secondary);
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: var(--anses-primary);
+  }
+}
+
+@layer components {
+  /* Large text for seniors */
+  .text-senior {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+  
+  .text-senior-lg {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  /* Big buttons for easy clicking */
+  .btn-big {
+    @apply px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-200;
+    min-height: 56px;
+  }
+  
+  .btn-primary-big {
+    @apply btn-big bg-[var(--anses-primary)] text-white hover:bg-[var(--anses-secondary)];
+  }
+  
+  .btn-secondary-big {
+    @apply btn-big bg-white text-[var(--anses-primary)] border-2 border-[var(--anses-primary)] hover:bg-[var(--anses-light)];
+  }
+  
+  /* Card styles */
+  .card-senior {
+    @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100;
+  }
+  
+  /* Section backgrounds */
+  .section-light {
+    @apply bg-gradient-to-b from-[var(--anses-light)] to-white;
+  }
+  
+  /* Legal notice banner */
+  .legal-banner {
+    @apply bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg;
+  }
+  
+  /* Ad placeholder */
+  .ad-placeholder {
+    @apply bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 text-sm;
+    min-height: 90px;
+  }
+  
+  /* Number selector for DNI */
+  .dni-number {
+    @apply w-12 h-14 text-xl font-bold rounded-lg border-2 border-gray-200 flex items-center justify-center cursor-pointer transition-all duration-200;
+  }
+  
+  .dni-number:hover {
+    @apply border-[var(--anses-secondary)] bg-[var(--anses-light)];
+  }
+  
+  .dni-number.selected {
+    @apply border-[var(--anses-primary)] bg-[var(--anses-primary)] text-white;
+  }
+  
+  /* Navigation link */
+  .nav-link {
+    @apply text-lg font-medium text-gray-700 hover:text-[var(--anses-primary)] transition-colors px-4 py-2 rounded-lg hover:bg-[var(--anses-light)];
+  }
+  
+  /* FAQ accordion */
+  .faq-item {
+    @apply border-b border-gray-200 last:border-0;
+  }
+  
+  /* Input fields */
+  .input-senior {
+    @apply w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[var(--anses-primary)] focus:ring-2 focus:ring-[var(--anses-light)] outline-none transition-all;
+  }
+  
+  /* Select dropdown */
+  .select-senior {
+    @apply w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-[var(--anses-primary)] focus:ring-2 focus:ring-[var(--anses-light)] outline-none transition-all bg-white cursor-pointer;
+  }
+}
+
+@layer utilities {
+  /* Focus visible for accessibility */
+  .focus-visible-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-[var(--anses-primary)] focus-visible:ring-offset-2;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s var(--ease-out-expo) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s var(--ease-out-expo) forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+  
+  .btn-big {
+    @apply px-6 py-3 text-base;
+    min-height: 48px;
+  }
+}

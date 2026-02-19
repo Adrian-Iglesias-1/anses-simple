@@ -1,0 +1,12 @@
+# ANSES Simple - Replit: build + serve static
+entrypoint = "app/package.json"
+
+[run]
+command = "cd app && npm install && npm run build && npx serve dist -s -l $PORT"
+
+[nix]
+channel = "stable-23_11"
+
+[deployment]
+build = "cd app && npm install && npm run build"
+run = "cd app && npx serve dist -s -l $PORT"
