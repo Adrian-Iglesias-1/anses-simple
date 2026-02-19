@@ -199,7 +199,6 @@ export default function PaymentTool() {
             data-full-width-responsive="true"
           />
         </div>
-        </div>
       </div>
     </section>
   );
