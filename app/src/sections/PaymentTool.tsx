@@ -36,7 +36,8 @@ export default function PaymentTool() {
 
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      const w = window as Window & { adsbygoogle?: unknown[] };
+      (w.adsbygoogle = w.adsbygoogle || []).push({});
     } catch (e) {
       console.error('AdSense push', e);
     }
