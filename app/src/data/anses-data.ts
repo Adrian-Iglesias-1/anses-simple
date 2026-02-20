@@ -4,7 +4,7 @@ export type TipoBeneficio =
   | 'pension'
   | 'auh'
   | 'asignacion-embarazo'
-  | 'puam'
+  | 'desempleo'
   | 'progresar';
 
 export interface Beneficio {
@@ -35,9 +35,9 @@ export const beneficios: Beneficio[] = [
     descripcion: 'Para mujeres embarazadas desde las 12 semanas'
   },
   {
-    id: 'puam',
-    nombre: 'Pensión Universal Adultos Mayores (PUAM)',
-    descripcion: 'Para personas mayores de 65 años sin jubilación'
+    id: 'desempleo',
+    nombre: 'Desempleo',
+    descripcion: 'Seguro de desempleo para trabajadores en situación de desocupación'
   },
   {
     id: 'progresar',
@@ -212,7 +212,7 @@ export const infoAdicional = {
       
       ¿A quiénes les corresponde?
       - Jubilados y pensionados
-      - Titulares de PUAM
+      - Titulares de seguro de desempleo
       - Beneficiarios de asignaciones familiares (proporcional)
       
       ¿Cómo se calcula?

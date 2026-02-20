@@ -13,7 +13,7 @@ export default function PaymentTool() {
   const getFechaCobro = () => {
     if (dniNumber === null) return null;
 
-    if (tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam') {
+    if (tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'desempleo') {
       return calendarioJubilaciones[dniNumber];
     } else if (tipoBeneficio === 'auh' || tipoBeneficio === 'asignacion-embarazo') {
       return calendarioAUH[dniNumber];
@@ -158,7 +158,7 @@ export default function PaymentTool() {
                               y pueden variar según el calendario oficial de ANSES.
                             </p>
                             <a
-                              href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                              href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'desempleo' 
                                 ? linksUtiles.calendarioPagos 
                                 : tipoBeneficio === 'progresar' 
                                 ? linksUtiles.progresar 
@@ -167,7 +167,7 @@ export default function PaymentTool() {
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 text-[var(--anses-secondary)] font-medium hover:underline"
                             >
-                              {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                              {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'desempleo' 
                                 ? 'Verificar fecha exacta en calendario oficial' 
                                 : tipoBeneficio === 'progresar'
                                 ? 'Verificar fecha exacta en PROGRESAR'
@@ -189,7 +189,7 @@ export default function PaymentTool() {
             <p className="text-sm text-gray-500 text-center">
               Esta información es aproximada. Para datos exactos, consultá siempre{' '}
               <a
-                href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'desempleo' 
                   ? linksUtiles.calendarioPagos 
                   : tipoBeneficio === 'progresar' 
                   ? linksUtiles.progresar 
@@ -198,7 +198,7 @@ export default function PaymentTool() {
                 rel="noopener noreferrer"
                 className="text-[var(--anses-secondary)] hover:underline"
               >
-                {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'desempleo' 
                   ? 'el calendario oficial de pagos' 
                   : tipoBeneficio === 'progresar'
                   ? 'PROGRESAR'
