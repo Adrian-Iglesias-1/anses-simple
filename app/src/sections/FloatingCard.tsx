@@ -30,7 +30,7 @@ export default function FloatingCard() {
 
   return (
     <div
-      className={`fixed right-4 top-24 z-40 transition-all duration-500 ${
+      className={`fixed right-4 bottom-4 z-40 transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
     >
