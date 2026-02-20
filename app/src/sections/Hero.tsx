@@ -85,78 +85,61 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Visual with Glassmorphism Cards */}
-          <div className="hidden lg:flex justify-center items-center">
+          <div className="hidden lg:flex justify-end items-center pr-8">
             <div className="relative">
-              {/* Main card - Translucent with glass effect */}
-              <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-8 w-80 border border-white/60 relative z-10 overflow-hidden">
-                {/* Decorative background inside card */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-200/30 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-200/20 rounded-full blur-xl translate-y-1/2 -translate-x-1/2" />
+              {/* Main card - Much más grande y centrada */}
+              <div className="bg-white/80 backdrop-blur-xl rounded-xl shadow-lg p-6 w-80 border border-white/60 relative z-10 mx-auto">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-[var(--anses-primary)] rounded-lg flex items-center justify-center">
+                    <Calendar className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-[var(--anses-primary)]">Próximo cobro</h3>
+                  </div>
+                </div>
                 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-[var(--anses-primary)]/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
-                      <Calendar className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[var(--anses-primary)]">
-                        Próximo cobro
-                      </h3>
-                      <p className="text-sm text-gray-500">Jubilación</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-r from-blue-50/80 to-blue-100/50 backdrop-blur-sm rounded-xl p-4 border border-blue-100/50">
-                      <p className="text-sm text-gray-600 mb-1">Fecha estimada</p>
-                      <p className="text-2xl font-bold text-[var(--anses-primary)]">
-                        3 al 7 de marzo
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-500">DNI terminado en</span>
-                      <span className="font-bold text-[var(--anses-primary)] bg-blue-100/80 backdrop-blur-sm px-3 py-1 rounded-full border border-blue-200/50">
-                        5
-                      </span>
-                    </div>
-                  </div>
+                <div className="bg-blue-50/80 rounded-lg p-3 mb-3">
+                  <p className="text-sm text-gray-600 mb-1">Fecha</p>
+                  <p className="text-lg font-bold text-[var(--anses-primary)]">3 al 7 de marzo</p>
+                </div>
+                
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-500">DNI en</span>
+                  <span className="font-bold text-[var(--anses-primary)] bg-blue-100 px-2 py-0.5 rounded-full">5</span>
                 </div>
               </div>
 
-              {/* Floating card 1 - Bank - Translucent */}
-              <div className="absolute -top-6 -right-6 bg-white/75 backdrop-blur-xl rounded-2xl shadow-xl p-4 border border-white/60 animate-float overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent" />
-                <div className="relative flex items-center gap-2">
-                  <div className="w-10 h-10 bg-green-100/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-green-200/50">
-                    <MapPin className="w-5 h-5 text-green-600" />
+              {/* Floating card 1 - Banco - Arriba derecha visible */}
+              <div className="absolute -top-12 right-4 bg-white/90 backdrop-blur-xl rounded-lg shadow-lg p-3 border border-white/70 animate-float">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-3.5 h-3.5 text-green-600" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-500">Banco</p>
-                    <p className="font-semibold text-[var(--anses-primary)]">Nación</p>
+                    <p className="font-semibold text-sm text-[var(--anses-primary)]">Nación</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating card 2 - Amount - Translucent */}
-              <div className="absolute -bottom-4 -left-6 bg-white/75 backdrop-blur-xl rounded-2xl shadow-xl p-4 border border-white/60 animate-float overflow-hidden" style={{ animationDelay: '1s' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-transparent" />
-                <div className="relative flex items-center gap-2">
-                  <div className="w-10 h-10 bg-amber-100/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-amber-200/50">
-                    <TrendingUp className="w-5 h-5 text-amber-600" />
+              {/* Floating card 2 - Monto - Abajo izquierda visible */}
+              <div className="absolute -bottom-12 left-4 bg-white/90 backdrop-blur-xl rounded-lg shadow-lg p-3 border border-white/70 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-amber-100 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-3.5 h-3.5 text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Monto aprox.</p>
-                    <p className="font-semibold text-[var(--anses-primary)]">$285.000</p>
+                    <p className="text-xs text-gray-500">Monto</p>
+                    <p className="font-semibold text-sm text-[var(--anses-primary)]">$285.000</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating card 3 - Extra info - Translucent */}
-              <div className="absolute top-1/2 -right-12 bg-white/70 backdrop-blur-xl rounded-xl shadow-lg p-3 border border-white/50 animate-float" style={{ animationDelay: '2s' }}>
+              {/* Floating card 3 - Al día - Derecha visible */}
+              <div className="absolute top-1/2 -translate-y-1/2 -right-20 bg-white/90 backdrop-blur-xl rounded-lg shadow-md px-3 py-2 border border-white/70 animate-float" style={{ animationDelay: '2s' }}>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-xs font-medium text-gray-600">Al día</span>
+                  <span className="text-xs font-medium text-gray-700">Al día</span>
                 </div>
               </div>
             </div>
