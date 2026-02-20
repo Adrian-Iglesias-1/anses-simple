@@ -118,9 +118,16 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Ad Placeholder */}
-            <div className="mt-6 bg-white/10 rounded-xl p-4 text-center">
-              <span className="text-sm text-blue-300">Espacio publicitario</span>
+            {/* Publicidad en bloque - footer */}
+            <div className="mt-6 rounded-xl overflow-hidden bg-white/5 p-2">
+              <ins
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-3494072602842969"
+                data-ad-slot="7010710292"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
             </div>
           </div>
         </div>

@@ -146,9 +146,16 @@ export default function DondeCobro() {
               </p>
             </div>
 
-            {/* Ad Placeholder */}
-            <div className="ad-placeholder">
-              <span>Espacio publicitario</span>
+            {/* Publicidad en bloque - dondecobro */}
+            <div className="mt-6">
+              <ins
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-3494072602842969"
+                data-ad-slot="4094561476"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
             </div>
           </div>
         </div>

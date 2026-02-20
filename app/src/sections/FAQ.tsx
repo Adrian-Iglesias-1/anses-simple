@@ -89,11 +89,16 @@ export default function FAQ() {
           </a>
         </div>
 
-        {/* Ad Placeholder */}
+        {/* Publicidad en bloque - faq */}
         <div className="mt-8">
-          <div className="ad-placeholder">
-            <span>Espacio publicitario</span>
-          </div>
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-3494072602842969"
+            data-ad-slot="4445915260"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
         </div>
       </div>
     </section>

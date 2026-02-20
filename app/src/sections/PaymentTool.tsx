@@ -201,13 +201,13 @@ export default function PaymentTool() {
           </div>
         </div>
 
-        {/* AdSense */}
+        {/* AdSense - payment2 */}
         <div className="mt-8">
           <ins
             className="adsbygoogle"
             style={{ display: 'block' }}
             data-ad-client="ca-pub-3494072602842969"
-            data-ad-slot="4094561476"
+            data-ad-slot="8323791961"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />

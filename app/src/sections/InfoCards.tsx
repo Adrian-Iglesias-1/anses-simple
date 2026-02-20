@@ -177,11 +177,16 @@ export default function InfoCards() {
           </div>
         </div>
 
-        {/* Ad Placeholder */}
+        {/* Publicidad en bloque - infoCard */}
         <div className="mt-10">
-          <div className="ad-placeholder h-32">
-            <span>Espacio publicitario</span>
-          </div>
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-3494072602842969"
+            data-ad-slot="7974096734"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
         </div>
       </div>
 
