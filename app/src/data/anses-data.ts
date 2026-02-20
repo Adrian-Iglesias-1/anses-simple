@@ -241,9 +241,9 @@ export const bancosComunes = [
 
 // Links útiles
 export const linksUtiles = {
-  anses: 'https://www.anses.gob.ar',
-  miAnses: 'https://servicioswww.anses.gob.ar/mianses',
-  consultaTarjeta: 'https://www.anses.gob.ar/consulta-tarjeta',
-  oficinas: 'https://www.anses.gob.ar/oficinas',
-  turnos: 'https://www.anses.gob.ar/turnos'
+  anses: 'https://www.anses.gob.ar/',
+  miAnses: 'https://www.anses.gob.ar/',
+  consultaTarjeta: 'https://www.anses.gob.ar/',
+  oficinas: 'https://www.anses.gob.ar/',
+  turnos: 'https://www.anses.gob.ar/'
 };
