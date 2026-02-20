@@ -160,6 +160,8 @@ export default function PaymentTool() {
                             <a
                               href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
                                 ? linksUtiles.calendarioPagos 
+                                : tipoBeneficio === 'progresar' 
+                                ? linksUtiles.progresar 
                                 : linksUtiles.miAnses}
                               target="_blank"
                               rel="noopener noreferrer"
@@ -167,6 +169,8 @@ export default function PaymentTool() {
                             >
                               {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
                                 ? 'Verificar fecha exacta en calendario oficial' 
+                                : tipoBeneficio === 'progresar'
+                                ? 'Verificar fecha exacta en PROGRESAR'
                                 : 'Verificar fecha exacta en Mi ANSES'}
                               <ExternalLink className="w-4 h-4" />
                             </a>
@@ -187,6 +191,8 @@ export default function PaymentTool() {
               <a
                 href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
                   ? linksUtiles.calendarioPagos 
+                  : tipoBeneficio === 'progresar' 
+                  ? linksUtiles.progresar 
                   : linksUtiles.miAnses}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -194,6 +200,8 @@ export default function PaymentTool() {
               >
                 {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
                   ? 'el calendario oficial de pagos' 
+                  : tipoBeneficio === 'progresar'
+                  ? 'PROGRESAR'
                   : 'Mi ANSES'}
               </a>
             </p>
