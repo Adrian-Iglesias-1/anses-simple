@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Calendar, Check, AlertCircle, ExternalLink } from 'lucide-react';
 import { beneficios, calendarioJubilaciones, calendarioAUH, linksUtiles } from '@/data/anses-data';
 import type { TipoBeneficio } from '@/data/anses-data';
@@ -45,15 +45,6 @@ export default function PaymentTool() {
   };
 
   const fechaCobro = getFechaCobro();
-
-  useEffect(() => {
-    try {
-      const w = window as Window & { adsbygoogle?: unknown[] };
-      (w.adsbygoogle = w.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error('AdSense push', e);
-    }
-  }, []);
 
   return (
     <section id="consulta" className="py-20 section-light">
