@@ -243,6 +243,7 @@ export const bancosComunes = [
 export const linksUtiles = {
   anses: 'https://www.anses.gob.ar/',
   miAnses: 'https://www.anses.gob.ar/',
+  calendarioPagos: 'https://www.anses.gob.ar/consultas/calendario-de-pagos',
   consultaTarjeta: 'https://www.anses.gob.ar/',
   oficinas: 'https://www.anses.gob.ar/',
   turnos: 'https://www.anses.gob.ar/'

@@ -158,12 +158,16 @@ export default function PaymentTool() {
                               y pueden variar según el calendario oficial de ANSES.
                             </p>
                             <a
-                              href={linksUtiles.miAnses}
+                              href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                                ? linksUtiles.calendarioPagos 
+                                : linksUtiles.miAnses}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 text-[var(--anses-secondary)] font-medium hover:underline"
                             >
-                              Verificar fecha exacta en Mi ANSES
+                              {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                                ? 'Verificar fecha exacta en calendario oficial' 
+                                : 'Verificar fecha exacta en Mi ANSES'}
                               <ExternalLink className="w-4 h-4" />
                             </a>
                           </div>
@@ -181,12 +185,16 @@ export default function PaymentTool() {
             <p className="text-sm text-gray-500 text-center">
               Esta información es aproximada. Para datos exactos, consultá siempre{' '}
               <a
-                href={linksUtiles.miAnses}
+                href={tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                  ? linksUtiles.calendarioPagos 
+                  : linksUtiles.miAnses}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--anses-secondary)] hover:underline"
               >
-                Mi ANSES
+                {tipoBeneficio === 'jubilacion' || tipoBeneficio === 'pension' || tipoBeneficio === 'puam' 
+                  ? 'el calendario oficial de pagos' 
+                  : 'Mi ANSES'}
               </a>
             </p>
           </div>
