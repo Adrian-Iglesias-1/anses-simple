@@ -2,17 +2,13 @@ import { useState, useEffect } from 'react';
 import { Calendar, Check, AlertCircle, ExternalLink } from 'lucide-react';
 import { beneficios, calendarioJubilaciones, calendarioAUH, linksUtiles } from '@/data/anses-data';
 import type { TipoBeneficio } from '@/data/anses-data';
+import { useConsulta } from '@/context/ConsultaContext';
 
 export default function PaymentTool() {
+  const { setConsultaResult } = useConsulta();
   const [tipoBeneficio, setTipoBeneficio] = useState<TipoBeneficio | ''>('');
   const [dniNumber, setDniNumber] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
-
-  const handleConsultar = () => {
-    if (tipoBeneficio && dniNumber !== null) {
-      setShowResult(true);
-    }
-  };
 
   const getFechaCobro = () => {
     if (dniNumber === null) return null;
@@ -30,6 +26,22 @@ export default function PaymentTool() {
   const getNombreBeneficio = () => {
     const beneficio = beneficios.find(b => b.id === tipoBeneficio);
     return beneficio?.nombre || 'tu beneficio';
+  };
+
+  const handleConsultar = () => {
+    if (tipoBeneficio && dniNumber !== null) {
+      setShowResult(true);
+      const fecha = getFechaCobro();
+      const nombre = getNombreBeneficio();
+      if (fecha && nombre) {
+        setConsultaResult({
+          tipoBeneficio,
+          dniNumber,
+          fechaCobro: fecha,
+          nombreBeneficio: nombre,
+        });
+      }
+    }
   };
 
   const fechaCobro = getFechaCobro();

@@ -8,9 +8,11 @@ import DondeCobro from '@/sections/DondeCobro';
 import FAQ from '@/sections/FAQ';
 import InfoCards from '@/sections/InfoCards';
 import Footer from '@/sections/Footer';
+import { ConsultaProvider } from '@/context/ConsultaContext';
 
 function App() {
   return (
+    <ConsultaProvider>
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navbar />
@@ -45,6 +47,7 @@ function App() {
       {/* Footer */}
       <Footer />
     </div>
+    </ConsultaProvider>
   );
 }
 
